@@ -1,2 +1,1 @@
-export default function GlobalStyles() {
-}
+export default function GlobalStyles() {}

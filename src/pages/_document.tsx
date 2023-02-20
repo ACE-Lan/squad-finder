@@ -1,17 +1,14 @@
-import { Main, NextScript } from "next/document";
-import Head from "next/head";
+import { Main, NextScript, Head } from 'next/document'
 
-export default function Document(){
-    return(
-        <html>
-            <Head>
-                {/* TO DO - import font */}
-            </Head>
+export default function Document() {
+  return (
+    <html>
+      <Head>{/* TO DO - import font */}</Head>
 
-            <body>
-                <Main/>
-                <NextScript/>
-            </body>
-        </html>
-    )
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </html>
+  )
 }
