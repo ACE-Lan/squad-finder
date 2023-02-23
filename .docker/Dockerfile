@@ -7,9 +7,9 @@ WORKDIR /app
 COPY . ./
 
 RUN npm install
-RUN npm run build:${NAMESPACE}
+RUN npm run build
 
 FROM nginx:alpine
 VOLUME /var/cache/nginx
-COPY --from=angular app/dist /usr/share/nginx/html
-COPY --from=angular app/.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY app/dist /usr/share/nginx/html
+COPY app/.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
