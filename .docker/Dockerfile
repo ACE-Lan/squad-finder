@@ -10,8 +10,9 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
+VOLUME /var/cache/nginx
 
-COPY ./nginx/default.conf
+COPY ./nginx/default.conf /etc/nginx/nginx.conf
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
