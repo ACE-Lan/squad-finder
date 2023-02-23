@@ -1,5 +1,5 @@
-import { getCssText } from "@/styles/styles";
-import { Main, NextScript, Head, Html } from "next/document";
+import { getCssText } from '@/styles/styles'
+import { Main, NextScript, Head, Html } from 'next/document'
 
 export default function Document() {
   return (
@@ -17,5 +17,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
