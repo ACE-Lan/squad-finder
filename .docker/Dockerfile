@@ -7,7 +7,7 @@ ENV HOST 0.0.0.0
 
 COPY . ./
 
-RUN npm run install
+RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
