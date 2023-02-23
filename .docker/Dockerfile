@@ -10,6 +10,11 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
-VOLUME /var/cache/nginx
-COPY --from=build-stage /app/build/ /usr/share/nginx/html
-COPY --from=build-stage /nginx.conf /etc/nginx/conf.d/default.conf
+
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+
+## Remove default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy from the stahg 1
+COPY --from=builder /nextjs-ui/out /usr/share/nginx/html
