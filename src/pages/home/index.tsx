@@ -1,11 +1,10 @@
-import { styled } from "@/styles/styles"
+import { styled } from '@/styles/styles'
 
 const H1 = styled('h1', {
-  background: "$black",
-  color: "White",
+  background: '$black',
+  color: 'White',
 })
 
 export default function Home() {
-    return <H1>Hello Word</H1>
-  }
-  
+  return <H1>Hello Word</H1>
+}
