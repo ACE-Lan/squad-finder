@@ -17,8 +17,6 @@ RUN npm install
 FROM base AS builder
 WORKDIR /app
 
-COPY app/dist /usr/share/nginx/html
-COPY app/.docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY . .
 
 RUN npm run build
