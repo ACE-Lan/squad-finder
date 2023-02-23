@@ -43,7 +43,7 @@ jobs:
               run: gcloud auth configure-docker --quiet
 
             - name: Build Docker image
-              run: docker build . -t "gcr.io/$GCP_PROJECT_ID/$NAMESPACE/$SERVICE_NAME" --build-arg NAMESPACE=${{ env.NAMESPACE }} -f .docker/Dockerfile
+              run: docker build . -t "gcr.io/$GCP_PROJECT_ID/$NAMESPACE/$SERVICE_NAME" --build-arg NAMESPACE=${{ env.NAMESPACE }} -f Dockerfile
 
             - name: Push Docker image
               run: docker push "gcr.io/$GCP_PROJECT_ID/$NAMESPACE/$SERVICE_NAME"
