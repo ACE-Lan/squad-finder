@@ -18,6 +18,7 @@ RUN npm install --production
 COPY ./ ./
 
 # Build app
+RUN npm run build
 RUN npm run export
 
 # Base on offical NGINX Alpine image
