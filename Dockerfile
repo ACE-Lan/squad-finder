@@ -2,7 +2,10 @@
 FROM node:alpine
 
 # Set working directory
-WORKDIR /usr/app
+WORKDIR /app
+
+ENV PORT 8080
+ENV HOST 0.0.0.0
 
 # Install PM2 globally
 RUN npm install --global pm2
@@ -20,9 +23,6 @@ COPY ./ ./
 # Build app
 RUN npm run build
 
-# Expose the listening port
-EXPOSE 3000
-
 # Run container as non-root (unprivileged) user
 # The node user is provided in the Node.js Alpine base image
 USER node
@@ -39,9 +39,6 @@ RUN rm /etc/nginx/conf.d/*
 # Copy config files
 # *.conf files in conf.d/ dir get included in main config
 COPY ./nginx/default.conf /etc/nginx/conf.d/
-
-# Expose the listening port
-EXPOSE 80
 
 # Launch NGINX
 CMD [ "nginx", "-g", "daemon off;" ]
