@@ -2,6 +2,7 @@
 .gitignore
 .next/
 .dockerignore
+out
 Dockerfile
 docker-compose.yml
 node_modules/
