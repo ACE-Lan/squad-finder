@@ -28,3 +28,4 @@ FROM nginx:alpine
 # *.conf files in conf.d/ dir get included in main config
 COPY --from=Nextjs app/out /usr/share/nginx/html
 COPY ./nginx/default.conf /etc/nginx/conf.d/
+COPY app/next-routes.conf /usr/share/nginx/next-routes.conf
