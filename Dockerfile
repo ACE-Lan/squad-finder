@@ -20,6 +20,7 @@ COPY ./ ./
 # Build app
 RUN npm run build
 RUN npm run export
+RUN npm run routes
 
 # Base on offical NGINX Alpine image
 FROM nginx:alpine
