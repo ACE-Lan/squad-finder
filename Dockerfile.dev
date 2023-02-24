@@ -1,0 +1,9 @@
+FROM node:12.18.3-alpine as es-tracking
+
+WORKDIR /app
+
+COPY . ./
+
+RUN npm install
+
+CMD npm run start
